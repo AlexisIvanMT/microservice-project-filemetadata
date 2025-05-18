@@ -1,42 +1,154 @@
-/****** Main Styling ******/
+/****** Estilo específico para el botón de selección de archivos ******/
+.file-input-container {
+  position: relative;
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 400px;
+}
 
+.file-input-label {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--primary);
+  color: #2C3E50;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.file-input-label:hover {
+  background-color: var(--secondary);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+#file-input {
+  display: none;
+}
+
+.file-name {
+  display: block;
+  margin-top: 1rem;
+  color: #2C3E50;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/****** (El resto del código se mantiene igual) ******/
+/****** Paleta de colores pastel intensos ******/
+:root {
+  --primary: #7EC8E3;
+  --secondary: #FF9AA2;
+  --accent: #C7F0BD;
+  --text: #333333;
+  --background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); 
+}
+
+/****** Estilos generales - Centrado total ******/
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  color: #222;
-  background-color: #ECF0F1;
+  font-size: 18px;
+  color: var(--text);
+  background-image: var(--background);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 20px;
 }
 
-.container {
-  padding: 0;
-  margin-top: 40px;
+/****** Títulos con mejor contraste ******/
+h1, h2, h3 {
+  color: #2C3E50;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+  margin: 2rem 0;
+  letter-spacing: -0.5px;
 }
 
-.footer {
-  margin-top: 60px;
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
-a {
-  color: #2574A9;
+/****** Tarjeta del formulario - Centrado y contraste ******/
+.view {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  margin: 2rem auto;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transform: translateY(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/****** Inputs y botones - Mejor legibilidad ******/
 input {
-  display: block;
-  position: relative;
-  margin: 10px auto;
+  width: 85%;
+  padding: 14px 24px;
+  margin: 20px auto;
+  border: 3px solid var(--primary);
+  border-radius: 35px;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 16px;
+  color: #2C3E50;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: #7F8C8D;
+  opacity: 0.8;
 }
 
 input#button {
-  width: 230px;
+  width: 220px;
+  background-color: var(--primary);
+  color: #2C3E50;
+  font-weight: 600;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.view {
-  position:relative;
-  margin: auto;
-  margin-top: 40px;
-  border: 1px  solid  #aaa;
-  padding: 20px;
-  width: 60%;
-  min-width: 400px;
+/****** Efectos hover mejorados ******/
+.view:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+input#button:hover {
+  background-color: var(--secondary);
+  color: #2C3E50;
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/****** Footer centrado y con contraste ******/
+.footer {
+  margin-top: 4rem;
+  color: #2C3E50;
+  padding: 1.5rem 3rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/****** Enlaces con mejor contraste ******/
+a {
+  color: #2C3E50;
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--secondary);
 }
